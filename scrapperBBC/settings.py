@@ -112,4 +112,4 @@ ITEM_PIPELINES = {
     'scrapperBBC.pipelines.MongoPipeline': 300,
 }
 MONGO_URI = 'mongodb://localhost:27017'
-MONGO_DATABASE = 'sandbox'
+MONGO_DATABASE = 'bbc_scrap'
