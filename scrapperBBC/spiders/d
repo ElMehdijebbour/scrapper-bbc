@@ -1,0 +1,733 @@
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 710, in urlopen
+    chunked=chunked,
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 966, in send
+    self.connect()
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 187, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f0860a04f10>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/twisted/internet/defer.py", line 1660, in _inlineCallbacks
+    result = current_context.run(gen.send, result)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/scrapy/core/downloader/middleware.py", line 41, in process_request
+    response = yield deferred_from_coro(method(request=request, spider=spider))
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/scrapy_selenium/middlewares.py", line 84, in process_request
+    self.driver.get(request.url)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 447, in get
+    self.execute(Command.GET, {'url': url})
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 433, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 344, in execute
+    return self._request(command_info[0], url, body=data)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 366, in _request
+    response = self._conn.request(method, url, body=body, headers=headers)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/request.py", line 79, in request
+    method, url, fields=fields, headers=headers, **urlopen_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/request.py", line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/poolmanager.py", line 376, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=43349): Max retries exceeded with url: /session/c5b4f15f6643b8424fd4ad3ba116ee3f/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f0860a04f10>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2022-08-03 21:50:57 [scrapy.core.scraper] ERROR: Error downloading <GET https://www.bbc.com/news/business-15521824>
+Traceback (most recent call last):
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 175, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 710, in urlopen
+    chunked=chunked,
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 966, in send
+    self.connect()
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 187, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f08608cb3d0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/twisted/internet/defer.py", line 1660, in _inlineCallbacks
+    result = current_context.run(gen.send, result)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/scrapy/core/downloader/middleware.py", line 41, in process_request
+    response = yield deferred_from_coro(method(request=request, spider=spider))
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/scrapy_selenium/middlewares.py", line 84, in process_request
+    self.driver.get(request.url)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 447, in get
+    self.execute(Command.GET, {'url': url})
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 433, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 344, in execute
+    return self._request(command_info[0], url, body=data)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 366, in _request
+    response = self._conn.request(method, url, body=body, headers=headers)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/request.py", line 79, in request
+    method, url, fields=fields, headers=headers, **urlopen_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/request.py", line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/poolmanager.py", line 376, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=43349): Max retries exceeded with url: /session/c5b4f15f6643b8424fd4ad3ba116ee3f/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f08608cb3d0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2022-08-03 21:50:57 [scrapy.core.scraper] ERROR: Error downloading <GET https://www.bbc.com/news/business-45489065>
+Traceback (most recent call last):
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 175, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 710, in urlopen
+    chunked=chunked,
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 966, in send
+    self.connect()
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 187, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f08608d3810>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/twisted/internet/defer.py", line 1660, in _inlineCallbacks
+    result = current_context.run(gen.send, result)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/scrapy/core/downloader/middleware.py", line 41, in process_request
+    response = yield deferred_from_coro(method(request=request, spider=spider))
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/scrapy_selenium/middlewares.py", line 84, in process_request
+    self.driver.get(request.url)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 447, in get
+    self.execute(Command.GET, {'url': url})
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 433, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 344, in execute
+    return self._request(command_info[0], url, body=data)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 366, in _request
+    response = self._conn.request(method, url, body=body, headers=headers)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/request.py", line 79, in request
+    method, url, fields=fields, headers=headers, **urlopen_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/request.py", line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/poolmanager.py", line 376, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=43349): Max retries exceeded with url: /session/c5b4f15f6643b8424fd4ad3ba116ee3f/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f08608d3810>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2022-08-03 21:50:57 [scrapy.core.scraper] ERROR: Error downloading <GET https://www.bbc.com/news/business/market-data>
+Traceback (most recent call last):
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 175, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 710, in urlopen
+    chunked=chunked,
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 966, in send
+    self.connect()
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 187, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f08608c1cd0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/twisted/internet/defer.py", line 1660, in _inlineCallbacks
+    result = current_context.run(gen.send, result)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/scrapy/core/downloader/middleware.py", line 41, in process_request
+    response = yield deferred_from_coro(method(request=request, spider=spider))
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/scrapy_selenium/middlewares.py", line 84, in process_request
+    self.driver.get(request.url)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 447, in get
+    self.execute(Command.GET, {'url': url})
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 433, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 344, in execute
+    return self._request(command_info[0], url, body=data)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 366, in _request
+    response = self._conn.request(method, url, body=body, headers=headers)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/request.py", line 79, in request
+    method, url, fields=fields, headers=headers, **urlopen_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/request.py", line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/poolmanager.py", line 376, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=43349): Max retries exceeded with url: /session/c5b4f15f6643b8424fd4ad3ba116ee3f/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f08608c1cd0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2022-08-03 21:50:57 [scrapy.core.scraper] ERROR: Error downloading <GET https://www.bbc.com/news/business>
+Traceback (most recent call last):
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 175, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 710, in urlopen
+    chunked=chunked,
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 966, in send
+    self.connect()
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 187, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f08608bafd0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/twisted/internet/defer.py", line 1660, in _inlineCallbacks
+    result = current_context.run(gen.send, result)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/scrapy/core/downloader/middleware.py", line 41, in process_request
+    response = yield deferred_from_coro(method(request=request, spider=spider))
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/scrapy_selenium/middlewares.py", line 84, in process_request
+    self.driver.get(request.url)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 447, in get
+    self.execute(Command.GET, {'url': url})
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 433, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 344, in execute
+    return self._request(command_info[0], url, body=data)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 366, in _request
+    response = self._conn.request(method, url, body=body, headers=headers)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/request.py", line 79, in request
+    method, url, fields=fields, headers=headers, **urlopen_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/request.py", line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/poolmanager.py", line 376, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=43349): Max retries exceeded with url: /session/c5b4f15f6643b8424fd4ad3ba116ee3f/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f08608bafd0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2022-08-03 21:50:57 [scrapy.core.scraper] ERROR: Error downloading <GET https://www.bbc.com/news/world>
+Traceback (most recent call last):
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 175, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 710, in urlopen
+    chunked=chunked,
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 966, in send
+    self.connect()
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 187, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f0860904690>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/twisted/internet/defer.py", line 1660, in _inlineCallbacks
+    result = current_context.run(gen.send, result)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/scrapy/core/downloader/middleware.py", line 41, in process_request
+    response = yield deferred_from_coro(method(request=request, spider=spider))
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/scrapy_selenium/middlewares.py", line 84, in process_request
+    self.driver.get(request.url)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 447, in get
+    self.execute(Command.GET, {'url': url})
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 433, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 344, in execute
+    return self._request(command_info[0], url, body=data)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 366, in _request
+    response = self._conn.request(method, url, body=body, headers=headers)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/request.py", line 79, in request
+    method, url, fields=fields, headers=headers, **urlopen_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/request.py", line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/poolmanager.py", line 376, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=43349): Max retries exceeded with url: /session/c5b4f15f6643b8424fd4ad3ba116ee3f/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f0860904690>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2022-08-03 21:50:57 [scrapy.core.scraper] ERROR: Error downloading <GET https://www.bbc.com/news/av/10462520>
+Traceback (most recent call last):
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 175, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 710, in urlopen
+    chunked=chunked,
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 966, in send
+    self.connect()
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 187, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f08608f2950>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/twisted/internet/defer.py", line 1660, in _inlineCallbacks
+    result = current_context.run(gen.send, result)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/scrapy/core/downloader/middleware.py", line 41, in process_request
+    response = yield deferred_from_coro(method(request=request, spider=spider))
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/scrapy_selenium/middlewares.py", line 84, in process_request
+    self.driver.get(request.url)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 447, in get
+    self.execute(Command.GET, {'url': url})
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 433, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 344, in execute
+    return self._request(command_info[0], url, body=data)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 366, in _request
+    response = self._conn.request(method, url, body=body, headers=headers)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/request.py", line 79, in request
+    method, url, fields=fields, headers=headers, **urlopen_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/request.py", line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/poolmanager.py", line 376, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=43349): Max retries exceeded with url: /session/c5b4f15f6643b8424fd4ad3ba116ee3f/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f08608f2950>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2022-08-03 21:50:57 [scrapy.core.scraper] ERROR: Error downloading <GET https://www.bbc.com/news/science-environment-56837908>
+Traceback (most recent call last):
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 175, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 710, in urlopen
+    chunked=chunked,
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 966, in send
+    self.connect()
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 187, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f0860922f90>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/twisted/internet/defer.py", line 1660, in _inlineCallbacks
+    result = current_context.run(gen.send, result)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/scrapy/core/downloader/middleware.py", line 41, in process_request
+    response = yield deferred_from_coro(method(request=request, spider=spider))
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/scrapy_selenium/middlewares.py", line 84, in process_request
+    self.driver.get(request.url)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 447, in get
+    self.execute(Command.GET, {'url': url})
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 433, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 344, in execute
+    return self._request(command_info[0], url, body=data)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 366, in _request
+    response = self._conn.request(method, url, body=body, headers=headers)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/request.py", line 79, in request
+    method, url, fields=fields, headers=headers, **urlopen_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/request.py", line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/poolmanager.py", line 376, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=43349): Max retries exceeded with url: /session/c5b4f15f6643b8424fd4ad3ba116ee3f/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f0860922f90>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2022-08-03 21:50:57 [scrapy.core.scraper] ERROR: Error downloading <GET https://www.bbc.com/news/coronavirus>
+Traceback (most recent call last):
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 175, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 710, in urlopen
+    chunked=chunked,
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 966, in send
+    self.connect()
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 187, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f0860a5d450>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/twisted/internet/defer.py", line 1660, in _inlineCallbacks
+    result = current_context.run(gen.send, result)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/scrapy/core/downloader/middleware.py", line 41, in process_request
+    response = yield deferred_from_coro(method(request=request, spider=spider))
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/scrapy_selenium/middlewares.py", line 84, in process_request
+    self.driver.get(request.url)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 447, in get
+    self.execute(Command.GET, {'url': url})
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 433, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 344, in execute
+    return self._request(command_info[0], url, body=data)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 366, in _request
+    response = self._conn.request(method, url, body=body, headers=headers)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/request.py", line 79, in request
+    method, url, fields=fields, headers=headers, **urlopen_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/request.py", line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/poolmanager.py", line 376, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=43349): Max retries exceeded with url: /session/c5b4f15f6643b8424fd4ad3ba116ee3f/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f0860a5d450>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2022-08-03 21:50:57 [scrapy.core.scraper] ERROR: Error downloading <GET https://www.bbc.com/news/world-60525350>
+Traceback (most recent call last):
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 175, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 710, in urlopen
+    chunked=chunked,
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/home/mehdi/anaconda3/lib/python3.7/http/client.py", line 966, in send
+    self.connect()
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connection.py", line 187, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f0860a5d690>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/twisted/internet/defer.py", line 1660, in _inlineCallbacks
+    result = current_context.run(gen.send, result)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/scrapy/core/downloader/middleware.py", line 41, in process_request
+    response = yield deferred_from_coro(method(request=request, spider=spider))
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/scrapy_selenium/middlewares.py", line 84, in process_request
+    self.driver.get(request.url)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 447, in get
+    self.execute(Command.GET, {'url': url})
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 433, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 344, in execute
+    return self._request(command_info[0], url, body=data)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 366, in _request
+    response = self._conn.request(method, url, body=body, headers=headers)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/request.py", line 79, in request
+    method, url, fields=fields, headers=headers, **urlopen_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/request.py", line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/poolmanager.py", line 376, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 828, in urlopen
+    **response_kw
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/home/mehdi/scrapperBBC/.env/lib/python3.7/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=43349): Max retries exceeded with url: /session/c5b4f15f6643b8424fd4ad3ba116ee3f/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f0860a5d690>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2022-08-03 21:50:57 [selenium.webdriver.remote.remote_connection] DEBUG: DELETE http://localhost:43349/session/c5b4f15f6643b8424fd4ad3ba116ee3f {}
+2022-08-03 21:50:57 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (94): localhost:43349
+2022-08-03 21:50:57 [urllib3.util.retry] DEBUG: Incremented Retry for (url='/session/c5b4f15f6643b8424fd4ad3ba116ee3f'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-08-03 21:50:57 [urllib3.connectionpool] WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f08608f2a90>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/c5b4f15f6643b8424fd4ad3ba116ee3f
+2022-08-03 21:50:57 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (95): localhost:43349
+2022-08-03 21:50:57 [urllib3.util.retry] DEBUG: Incremented Retry for (url='/session/c5b4f15f6643b8424fd4ad3ba116ee3f'): Retry(total=1, connect=None, read=None, redirect=None, status=None)
+2022-08-03 21:50:57 [urllib3.connectionpool] WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f0860904a50>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/c5b4f15f6643b8424fd4ad3ba116ee3f
+2022-08-03 21:50:57 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (96): localhost:43349
+2022-08-03 21:50:57 [urllib3.util.retry] DEBUG: Incremented Retry for (url='/session/c5b4f15f6643b8424fd4ad3ba116ee3f'): Retry(total=0, connect=None, read=None, redirect=None, status=None)
+2022-08-03 21:50:57 [urllib3.connectionpool] WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f086092b310>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/c5b4f15f6643b8424fd4ad3ba116ee3f
+2022-08-03 21:50:57 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (97): localhost:43349
+2022-08-03 21:50:57 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 24,
+ 'downloader/exception_type_count/urllib3.exceptions.MaxRetryError': 23,
+ 'downloader/exception_type_count/urllib3.exceptions.ProtocolError': 1,
+ 'downloader/request_bytes': 221,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 196491224,
+ 'downloader/response_count': 155,
+ 'downloader/response_status_count/200': 155,
+ 'elapsed_time_seconds': 256.262799,
+ 'finish_reason': 'shutdown',
+ 'finish_time': datetime.datetime(2022, 8, 3, 20, 50, 57, 539861),
+ 'httpcompression/response_bytes': 2731,
+ 'httpcompression/response_count': 1,
+ 'log_count/CRITICAL': 2,
+ 'log_count/DEBUG': 2202,
+ 'log_count/ERROR': 142,
+ 'log_count/INFO': 15,
+ 'log_count/WARNING': 73,
+ 'memusage/max': 464662528,
+ 'memusage/startup': 113872896,
+ 'request_depth_max': 3,
+ 'response_received_count': 155,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 178,
+ 'scheduler/dequeued/memory': 178,
+ 'scheduler/enqueued': 178,
+ 'scheduler/enqueued/memory': 178,
+ 'spider_exceptions/TypeError': 118,
+ 'start_time': datetime.datetime(2022, 8, 3, 20, 46, 41, 277062)}
+2022-08-03 21:50:57 [scrapy.core.engine] INFO: Spider closed (shutdown)
+(.env) (base) mehdi@mehdi-GS63-Stealth-8RE:~/scrapperBBC$ 
